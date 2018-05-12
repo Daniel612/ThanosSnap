@@ -1,0 +1,19 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="appguidance">
+    <text class="app-guidance">{{guidance}}</text>
+  </view>
+  <view class="thanos">
+    <image style="width: 600rpx; height: 600rpx; margin: 10rpx;" mode="scaleToFill" src="{{imgSrc}}"></image>
+  </view>
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+</view>
